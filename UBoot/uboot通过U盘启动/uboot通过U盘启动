@@ -1,0 +1,174 @@
+# uboot通过U盘启动
+
+> 参考链接：
+>
+> [uboot中挂载U盘，利用FAT文件系统读写U盘文件](https://blog.csdn.net/zjy900507/article/details/78779538)
+
+
+
+## 1、开发背景
+
+​	由于开发阶段需要频繁修改内核镜像文件和设备树文件，如果每次修改都通过将文件拷贝到硬盘，再从硬盘加载内核镜像和设备树，则过于繁琐。直接通过加载U盘里的内核镜像和设备树则很简单。
+
+## 2、开发需求
+
+​	内核镜像文件`uImage`和设备树`dtb`存放在U盘的某个目录下。
+
+## 3、`uboot`通过U盘加载文件
+
+### 3.1 检测U盘
+
+​	先把U盘插在`USB`插口或`pcie`转`USB`拓展卡上，输入`usb start`或者`usb reset`命令检测U盘。
+
+```
+D3000#usb start
+starting USB...
+Bus xhci_pci: Register 5000420 NbrPorts 5
+Starting the controller
+USB XHCI 1.00
+scanning bus xhci_pci for devices... 3 USB Device(s) found
+       scanning usb for storage devices... 1 Storage Device(s) found
+```
+
+​	然后可以使用`usb dev`或`usb storage`命令查看检测到的`USB`设备，如下（可以看出设备号为0）：
+
+```
+D3000#usb dev
+
+IDE device 0: Vendor:  USB Rev: 1.00 Prod:  SanDisk 3.2Gen1
+            Type: Removable Hard Disk
+            Capacity: 58674.0 MB = 57.2 GB (120164352 x 512)
+D3000#usb storage
+  Device 0: Vendor:  USB Rev: 1.00 Prod:  SanDisk 3.2Gen1
+            Type: Removable Hard Disk
+            Capacity: 58674.0 MB = 57.2 GB (120164352 x 512)
+```
+
+​	使用`usb info`命令可以列出开发板上`USB`接口的属性，如下：
+
+```
+D3000#usb info
+1: Hub,  USB Revision 3.0
+ - U-Boot XHCI Host Controller 
+ - Class: Hub
+ - PacketSize: 512  Configurations: 1
+ - Vendor: 0x0000  Product 0x0000 Version 1.0
+   Configuration: 1
+   - Interfaces: 1 Self Powered 0mA
+     Interface: 0
+     - Alternate Setting 0, Endpoints: 1
+     - Class Hub
+     - Endpoint 1 In Interrupt MaxPacket 8 Interval 255ms
+
+2: Mass Storage,  USB Revision 3.20
+ -  USB  SanDisk 3.2Gen1 0401b226934d6a249105439a5cf989a
+ - Class: (from Interface) Mass Storage
+ - PacketSize: 512  Configurations: 1
+ - Vendor: 0x0781  Product 0x5591 Version 1.0
+   Configuration: 1
+   - Interfaces: 1 Bus Powered 224mA
+     Interface: 0
+     - Alternate Setting 0, Endpoints: 2
+     - Class Mass Storage, Transp. SCSI, Bulk only
+     - Endpoint 1 In Bulk MaxPacket 1024
+     - Endpoint 2 Out Bulk MaxPacket 1024
+
+3: Hub,  USB Revision 2.10
+ -  USB2.0 Hub 
+ - Class: Hub
+ - PacketSize: 64  Configurations: 1
+ - Vendor: 0x2109  Product 0x3431 Version 4.32
+   Configuration: 1
+   - Interfaces: 1 Self Powered Remote Wakeup 100mA
+     Interface: 0
+     - Alternate Setting 0, Endpoints: 1
+     - Class Hub
+     - Endpoint 1 In Interrupt MaxPacket 1 Interval 12ms
+```
+
+​	使用`usb tree`命令可以列出`Device Tree`，如下：
+
+```
+D3000#usb tree
+USB device tree:
+  1  Hub (5 Gb/s, 0mA)
+  |  U-Boot XHCI Host Controller 
+  |
+  +-2  Mass Storage (5 Gb/s, 224mA)
+  |     USB  SanDisk 3.2Gen1 0401b226934d6a249105439a5cf989a
+  |  
+  +-3  Hub (480 Mb/s, 100mA)
+        USB2.0 Hub
+```
+
+​	使用`usb part`列出U盘设备的分区信息，如下：
+
+```
+D3000#usb part
+
+Partition Map for USB device 0  --   Partition Type: DOS
+
+Part	Start Sector	Num Sectors		UUID		Type
+  1		32        		120164320 		8bf3fe55-01	0b
+```
+
+### 3.2 加载U盘中的文件
+
+​	使用`ls usb 0 /`指令查看U盘中的文件，此命令中的`0`就是设备号，即上述使用`usb dev`或`usb storage`命令查看到的设备号，如下：
+
+```
+D3000#ls usb 0 /
+            System Volume Information/
+ 30376512   uImage-d3000
+            .Trash-1000/
+    13947   pd2308-demoa-ddr5.dtb
+ 235481362   linux-phytium-6.6.y-dev.tar.gz
+    13947   pd2308-demoa-ddr5-1.dtb
+
+4 file(s), 2 dir(s)
+```
+
+​	获知内核镜像及设备树文件在U盘中的路径后，加载文件到对应的地址，最后启动系统，如下：
+
+```
+D3000#load usb 0 0x90000000 /uImage-d3000           
+30376512 bytes read in 206 ms (140.6 MiB/s)
+D3000#load usb 0 0x95000000 /pd2308-demoa-ddr5.dtb  
+13947 bytes read in 11 ms (1.2 MiB/s)
+D3000#bootm 0x90000000 -:- 0x95000000
+```
+
+## 4、问题
+
+### 4.1 能够识别到U盘，但是查看不到U盘中的文件并且无法加载文件
+
+#### 4.1.1问题现象
+
+​	使用`usb start`命令后能够检测到U盘，但是使用`ls usb 0 /`命令查看不到U盘中的文件，并且也无法加载文件，如下：
+
+```
+D3000#usb start
+starting USB...
+Bus xhci_pci: Register 5000420 NbrPorts 5
+Starting the controller
+USB XHCI 1.00
+scanning bus xhci_pci for devices... 3 USB Device(s) found
+       scanning usb for storage devices... 1 Storage Device(s) found
+D3000#usb dev
+
+IDE device 0: Vendor:  USB Rev: 1.00 Prod:  SanDisk 3.2Gen1
+            Type: Removable Hard Disk
+            Capacity: 58656.0 MB = 57.2 GB (120127488 x 512)
+D3000#ls usb 0 /
+D3000#load usb 0:1 0x90000000 /uImage-d3000
+Can't set block device
+D3000#
+```
+
+#### 4.1.2 问题原因
+
+​	`uboot`只能使用`ext4`和`FAT32`格式的文件系统，其它格式的文件系统的U盘无法被正常使用，如`NTFS`、`exFAT`。
+
+#### 4.1.3 解决方法
+
+​	选择`ext4`或`FAT32`格式的文件系统的U盘，或者格式化U盘文件系统格式为`ext4`或`FAT32`。建议选择`FAT32`格式的文件系统的U盘，因为`ext4`格式的文件系统的U盘无法被`Windows`识别，而`FAT32`格式的文件系统的U盘既能被`Windows`识别，又能被`uboot`识别。
