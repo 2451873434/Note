@@ -48,3 +48,17 @@ struct void __iomem *addr5 = of_iomap(nd, 5);
 iounmap(addr0);
 ```
 
+
+
+
+
+
+
+## `of_property_count_u32_elems()`
+
+​	`of_property_count_u32_elems()`函数返回某个属性的值的个数
+
+```c
+ret = of_property_count_u32_elems(node, "st,adc-channels");
+```
+

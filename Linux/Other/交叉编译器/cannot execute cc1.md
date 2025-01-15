@@ -20,7 +20,7 @@ compilation terminated.
 ​	所以在安装交叉编译器的时候，不能简单的拷贝所用的`bin`文件下的工具，而是应该按照正常流程安装，即添加`PATH`路径，如下：
 
 ```bash
-$ vim /ect/profile
+$ vim /etc/profile
 # 在该文件的最后一行添加下面一行代码
 export PATH=$PATH:/usr/local/toolchains/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf/bin
 

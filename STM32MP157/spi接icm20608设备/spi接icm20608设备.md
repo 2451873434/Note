@@ -132,7 +132,7 @@ struct icm20608_dev {
 
 ### 2.2 驱动文件
 
-#### 2.2.1 初始化和退出
+#### 2.2.1 初始化和卸载
 
 ```c
 static int __init icm20608_init(void)
