@@ -93,7 +93,7 @@ static inline u32 __attribute_const__ read_cpuid_id(void)
 ​	一般情况下，我们只用获取`Implementer`，`Architecture`和`Part Number`这三个信息即可，内核也提供了通用的方法来获取它们：
 
 ```c
-/* arch/arm64/include/asm/cputype.h */
+ha/* arch/arm64/include/asm/cputype.h */
 #define MIDR_CPU_MODEL(imp, partnum) (((imp) << 24) | (0xf << 16) | ((partnum) << 4))
 
 #define MIDR_CPU_MODEL_MASK ((0xff << 24) | (0xf < 16) | (0xfff < 4))

@@ -6,6 +6,12 @@
 
 
 
+![](picture/0-1.png)
+
+![](picture/0-2.png)
+
+
+
 ## 1、`handler`
 
 ​	`input_handler`是事件处理层，代表一个事件处理器，与之相关的文件有如`drivers/input/evdev.c`、`drivers/input/mousedev.c`、`drivers/input/input-leds.c`等。在内核启动之后都会通过以下流程去注册一个事件处理器，如下：

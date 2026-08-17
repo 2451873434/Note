@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cb5a4b0e7d954bc7",
+        "id": "e5b9ef5542dca80b",
         "type": "tabs",
         "children": [
           {
-            "id": "499aec100221af70",
+            "id": "45e1978e7b39a458",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/Other/异常模式及异常向量表/异常处理示例.md",
+                "file": "BPF/eBPF文档.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "异常处理示例"
+              "title": "eBPF文档"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -77,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "80fdc6f9a02062cd",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/Other/异常模式及异常向量表/异常处理示例.md",
+                "file": "ARM/ARM CCA/ARM-CCA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "异常处理示例 的反向链接列表"
+              "title": "ARM-CCA 的反向链接列表"
             }
           },
           {
@@ -113,7 +114,7 @@
               "type": "outgoing-link",
               "state": {
                 "linksCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
               "title": "出链"
@@ -126,7 +127,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -138,20 +141,38 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "QSPI/DTR模式/DTR模式.md"
+                "file": "ARM/ARM CCA/ARM-CCA.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DTR模式 的大纲"
+              "title": "ARM-CCA 的大纲"
+            }
+          },
+          {
+            "id": "12d13a4d2ea6d08e",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "Linux/Linux内核源码编译报错/Linux内核源码编译报错.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "脚注"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -160,38 +181,46 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "499aec100221af70",
+  "active": "45e1978e7b39a458",
   "lastOpenFiles": [
-    "Linux/Other/异常模式及异常向量表/异常相关寄存器.md",
-    "Linux/Other/异常模式及异常向量表/异常模式及异常向量表.md",
-    "QSPI/内核镜像存放在flash中出现Bad Data CRC/内核镜像存放在flash中出现Bad Data CRC.md",
-    "QSPI/驱动注册失败/常见错误码.md",
-    "未命名.canvas",
-    "2025-02-11.md",
-    "Git/Git常见问题/error invalid path报错/error invalid path报错.md",
-    "SPI/驱动注册失败/常见错误码.md",
-    "Linux/Other/异常模式及异常向量表/异常处理示例.md",
-    "QSPI/DTR模式/DTR模式.md",
-    "QSPI/Quad SPI和QPI的区别/Quad SPI和QPI的区别.md",
-    "QSPI/DTR模式",
-    "QSPI/s25fs128s型号的flash/s25fs128s型号的flash.md",
-    "QSPI/驱动注册失败/错误码(-5).md",
-    "SPI/驱动注册失败/错误码(-524).md",
-    "QSPI/驱动注册失败/错误码(-2).md",
-    "QSPI/Quad SPI和QPI的区别/picture/QOUT.png",
-    "SPI/3byes和4bytes地址/3bytes和4bytes地址.md",
-    "STM32MP157/KY-015/KY-015.md",
-    "2025-02-05.md",
-    "QSPI/SPI、Dual SPI、Quad SPI、QPI之间区别/SPI、Dual SPI、Quad SPI、QPI之间区别.md",
-    "Git/保存当前分支的改动/保存当前分支的改动.md",
-    "QSPI/Quad SPI和QPI的区别",
-    "Git/Git常用指令/Git常用指令.md",
-    "SPI/spi/spi.md",
+    "2026-06-08.md",
+    "BPF/eBPF文档.md",
+    "BPF/bpf.md",
+    "2026-06-04.md",
+    "未命名 1.base",
+    "未命名.base",
+    "未命名.md",
+    "Linux/Linux内核源码编译报错/Linux内核源码编译报错.md",
+    "ARM/ARM CCA/ARM CCA.md",
+    "ARM/ARM CCA/ARM-CCA.md",
+    "RAS/Tianji2c处理器核特性验证-RAS/SCTLR_EL1.IESB.md",
+    "Linux/Linux内核代码/__printf.md",
+    "Linux/Linux内核代码/do_while(0).md",
+    "Linux/Linux内核常用功能/获取CPU型号/获取CPU型号.md",
+    "Linux/Linux内核常用功能/启动后自动运行脚本/启动后自动运行脚本.md",
+    "Linux/Shell脚本/Shell脚本报错.md",
     "Linux/Shell脚本/Shell脚本.md",
-    "Linux/Other/insmod安装模块出错/insmod安装模块出错.md",
-    "UBoot/uboot通过网络启动/uboot通过网络启动.md",
+    "UBoot/uboot常见问题/uboot常见问题.md",
+    "Linux/Linux内核源码编译报错/picture",
+    "Linux/Linux内核源码编译报错",
+    "未命名 2.base",
+    "什么是`eBPF`.md",
+    "未命名.canvas",
+    "2026-01-29.md",
+    "IO/操作系统IO全流程详解/操作系统IO全流程详解.md",
+    "picture/字符设备.pn.md",
+    "picture/电子组件.pn.md",
+    "picture",
+    "ARM/ARM CCA/ARM CCA扩展.md",
+    "BPF/picture/eBPF验证.png",
+    "Linux/Other/异常模式及异常向量表/异常处理示例.md",
+    "2025-12-24.md",
+    "Git/Git常见问题/error invalid path报错/error invalid path报错.md",
+    "Linux/Other/异常模式及异常向量表/异常相关寄存器.md",
+    "QSPI/DTR模式",
+    "QSPI/Quad SPI和QPI的区别/picture/QOUT.png",
+    "QSPI/Quad SPI和QPI的区别",
     "UBoot/uboot通过网络启动/picture/3-1.png",
-    "Linux/Other/insmod安装模块出错/picture/1.png",
-    "Week Report/2024三季度.md"
+    "Linux/Other/insmod安装模块出错/picture/1.png"
   ]
 }
