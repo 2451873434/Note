@@ -1,5 +1,6 @@
 {
   "accentColor": "",
   "nativeMenus": false,
-  "cssTheme": "Minimal"
+  "cssTheme": "Minimal",
+  "baseFontSize": 20
 }

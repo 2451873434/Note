@@ -1,0 +1,100 @@
+<mxfile host="Electron" modified="2026-09-08T06:50:49.406Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="4DDdOdOOq05aqRx7cpd3" version="21.2.1" type="device">
+  <diagram name="第 1 页" id="mqo7ukOd-kovV_c04sw4">
+    <mxGraphModel dx="1621" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-31" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="150" width="560" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-2" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="320" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-4" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="aNW2jDz_7PNPKLfvntuz-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="320" as="sourcePoint" />
+            <mxPoint x="80" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-5" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-7" value="pcie0时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-8" value="pgu总时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="290" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-12" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-13" value="pcie1时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aNW2jDz_7PNPKLfvntuz-2" target="aNW2jDz_7PNPKLfvntuz-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="450" as="sourcePoint" />
+            <mxPoint x="440" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-15" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-16" value="pcie2时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aNW2jDz_7PNPKLfvntuz-2" target="aNW2jDz_7PNPKLfvntuz-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="390" as="sourcePoint" />
+            <mxPoint x="70" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-19" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-20" value="usb时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="370" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-21" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="470" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-22" value="gmac时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-23" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-24" value="其它时钟" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aNW2jDz_7PNPKLfvntuz-2" target="aNW2jDz_7PNPKLfvntuz-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="390" as="sourcePoint" />
+            <mxPoint x="330" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="aNW2jDz_7PNPKLfvntuz-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="340" as="sourcePoint" />
+            <mxPoint x="330" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-27" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="aNW2jDz_7PNPKLfvntuz-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="340" as="sourcePoint" />
+            <mxPoint x="330" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-29" value="这部分时钟并没有对应的时钟停顿信号寄存器，即pgu总时钟开，它们就开，pgu总时钟关，它们就关" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=default;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="490" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="aNW2jDz_7PNPKLfvntuz-30" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;strokeColor=default;dashed=1;" edge="1" parent="1" target="aNW2jDz_7PNPKLfvntuz-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="560" as="sourcePoint" />
+            <mxPoint x="330" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
