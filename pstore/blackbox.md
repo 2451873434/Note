@@ -173,3 +173,15 @@ CONFIG_BLACKBOX_LOG_PART_REPRESENTATIVE="/data"
 由上面代码不难看出，`psinfo->buf`和`psinfo->bufsize`两个都是仅被用于`dmesg`的崩溃转储的，而`blackbox`在存储数据时，使用的就是`psinfo->buf`和`psinfo->bufsize`。所以最终导致`blackbox`的实际日志存储容量大小与`record-size`相对应。
 
 为了解决该问题，笔者的建议是新增两个参数`psinfo->bbox_buf`和`psinfo->bbox_bufsize`。
+
+### 寄存器信息保存
+
+一些调试时遇到的问题：
+
+1、在系统宕机保存寄存器信息时，卡在记录`GPU`寄存器信息处。
+
+原因：`GPU`寄存器为两块分段式的地址，`fs/pstore/platform.c`文件中的描述也应该是两块分段式的。
+
+2、系统宕机时报错`[SYSTE] hasn't been registered!`
+
+在`format_error_info()`函数中使用`strscpy()`函数时，把第三个参数目标缓存区大小写成了拷贝的字符数。

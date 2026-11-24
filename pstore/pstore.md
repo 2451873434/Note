@@ -284,10 +284,11 @@ reserved-memory {
 	ramoops@0 {
 		no-map;
 		compatible = "ramoops";
-		reg = <0x21 0x10000000 0x0 0x8000000>;
+		reg = <l 0x0 0x8000000>;
 		record-size = <0x100000>;
 		console-size = <0x100000>;
 		blackbox-size = <0x100000>;
+		
 		flags = <0x1>;
 		max-reason = <0x1>;
 	};
@@ -355,7 +356,7 @@ panic 发生后，内核已经不能像正常运行时那样“提交一个写�
 
 `Linux`内核的`PSCI`会检测固件对`SYSTEM_RESET2`的支持情况，然后通过`reboot_mode`参数来控制当前重启的方式，如下所示：
 
-![](E:/git/Note/RAS/pstore/picture/SYSTEM_RESET和SYSTEM_RESET2.png)
+![](picture/SYSTEM_RESET和SYSTEM_RESET2.png)
 
 如何设置`reboot_mode`？
 
